@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terramax Script Index</title>
-  <meta name="description" content="Terramax public helper scripts and bootstrap tools." />
-  <style>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terramax Public Index</title>
+    <meta name="description" content="Terramax public helper scripts, bootstrap tools, and apps.">
+    <style>
     :root{
-      --ink:#404040;
-      --muted:#808080;
-      --line:#d7dde6;
-      --paper:#ffffff;
-      --bg:#eef2f7;
-      --brand:#17365D;
-      --heading:#365F91;
-      --link:#4F81BD;
-      --soft:#f7f9fc;
+      --ink:#223243;
+      --muted:#5F7D95;
+      --accent:#D89B3A;
+      --accent-soft:#8FB6D9;
+      --paper:#FFFFFF;
+      --warm:#EFE6D2;
+      --bg:#f4f1ea;
+      --line:#d9d2c4;
+      --card:#fbfaf7;
     }
 
     * { box-sizing:border-box; }
@@ -23,7 +23,7 @@
     html, body {
       margin:0;
       padding:0;
-      background:var(--bg);
+      background:linear-gradient(180deg, #f3efe7 0%, #f7f5ef 100%);
       color:var(--ink);
       font-family:"Calibri","Arial",sans-serif;
     }
@@ -33,41 +33,36 @@
     }
 
     .hero {
-      max-width:920px;
+      width:100%;
+      max-width:1200px;
       margin:0 auto;
-      position:relative;
+      line-height:0;
       overflow:hidden;
-      border-left:1px solid var(--line);
-      border-right:1px solid var(--line);
-      background:var(--brand);
     }
 
     .hero img {
       display:block;
       width:100%;
+      max-width:100%;
       height:auto;
-      opacity:.98;
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 58%, rgba(0,0,0,.75) 74%, rgba(0,0,0,.2) 90%, rgba(0,0,0,0) 100%);
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 58%, rgba(0,0,0,.75) 74%, rgba(0,0,0,.2) 90%, rgba(0,0,0,0) 100%);
     }
 
     .sheet {
       max-width:920px;
       margin:0 auto;
+      margin-top:-22px;
+      padding:34px 52px 56px;
       background:var(--paper);
       border:1px solid var(--line);
-      border-top:none;
-      box-shadow:0 12px 32px rgba(23,54,93,.10);
-      padding:34px 52px 56px;
+      box-shadow:0 16px 36px rgba(34,50,67,.10);
       position:relative;
-      margin-top:-28px;
     }
 
     .doc-head {
       display:flex;
       justify-content:space-between;
-      gap:16px;
       align-items:flex-start;
+      gap:16px;
       flex-wrap:wrap;
       margin-bottom:28px;
     }
@@ -77,7 +72,7 @@
       font-size:1.35rem;
       letter-spacing:.08em;
       text-transform:uppercase;
-      color:var(--heading);
+      color:var(--ink);
       font-weight:700;
     }
 
@@ -100,52 +95,52 @@
       font-size:1rem;
       text-transform:uppercase;
       letter-spacing:.08em;
-      color:var(--heading);
+      color:var(--accent);
       font-weight:700;
     }
 
-    .script-list {
+    .item-list {
       list-style:none;
-      padding:0;
       margin:0;
+      padding:0;
       display:grid;
       gap:18px;
     }
 
-    .script-card {
+    .item-card {
+      background:var(--card);
       border:1px solid var(--line);
       padding:18px 20px;
-      background:var(--soft);
     }
 
-    .script-top {
+    .item-top {
       display:flex;
       justify-content:space-between;
-      gap:12px;
       align-items:flex-start;
+      gap:12px;
       flex-wrap:wrap;
       margin-bottom:8px;
     }
 
-    .script-name {
+    .item-name {
       margin:0;
       font-size:1.05rem;
-      color:var(--brand);
+      color:var(--ink);
       font-weight:700;
     }
 
     .tag {
-      border:1px solid #c8d4e3;
-      color:var(--heading);
+      background:#fffdfa;
+      border:1px solid #cfb789;
+      color:var(--accent);
       font-size:.8rem;
       padding:4px 8px;
       letter-spacing:.06em;
       text-transform:uppercase;
       white-space:nowrap;
-      background:#fff;
     }
 
-    .script-desc {
+    .item-desc {
       margin:0 0 14px;
       color:var(--ink);
       line-height:1.7;
@@ -160,29 +155,30 @@
 
     .button {
       display:inline-block;
-      text-decoration:none;
-      border:1px solid var(--link);
-      color:var(--link);
       padding:9px 14px;
+      border:1px solid var(--accent);
+      background:#fff;
+      color:var(--accent);
+      text-decoration:none;
       font-size:.92rem;
       letter-spacing:.03em;
       transition:.18s ease;
-      background:#fff;
     }
 
     .button:hover {
-      background:var(--link);
+      background:var(--accent);
       color:#fff;
     }
 
     .button.secondary {
-      border-color:var(--line);
+      border-color:var(--accent-soft);
       color:var(--muted);
     }
 
     .button.secondary:hover {
-      background:#eef3f9;
-      color:var(--brand);
+      background:var(--accent-soft);
+      border-color:var(--accent-soft);
+      color:#11202c;
     }
 
     .notes {
@@ -194,97 +190,157 @@
       line-height:1.7;
     }
 
-    .footer {
-      margin-top:30px;
-      text-align:center;
-      color:var(--muted);
-      font-size:.86rem;
-      letter-spacing:.03em;
+    code {
+      background:var(--warm);
+      padding:2px 6px;
+      border-radius:4px;
+      color:var(--ink);
     }
 
     @media (max-width: 720px){
-      body { padding:0 12px 24px; }
-      .sheet { padding:26px 22px 36px; margin-top:-18px; }
-      .doc-head { display:block; }
-      .doc-meta { text-align:left; margin-top:10px; }
+      body {
+        padding:0 12px 24px;
+      }
+
+      .sheet {
+        margin-top:-14px;
+        padding:26px 22px 36px;
+      }
+
+      .doc-head {
+        display:block;
+      }
+
+      .doc-meta {
+        margin-top:10px;
+        text-align:left;
+      }
     }
   </style>
-</head>
-<body>
-  <header class="hero">
-    <img src="terramax_logo.png" alt="Terramax logo" />
-  </header>
-
-  <main class="sheet">
-    <section class="doc-head">
-      <div>
-        <h2 class="doc-title">Public Script Index</h2>
-      </div>
-      <p class="doc-meta">
-        mostly personal />
-        random scripts
-      </p>
-    </section>
-
-    <p class="intro">
-      This page is a simple public landing page for Terramax helper scripts, wrappers, and bootstrap tools.
-      It is intentionally minimal and documentation-forward: direct downloads, short descriptions, and no extra framework overhead.
-    </p>
-
-    <h3 class="section-title">Available Scripts</h3>
-
-    <ul class="script-list">
-      <li class="script-card">
-        <div class="script-top">
-          <h4 class="script-name">KDE-Services Bootstrap</h4>
-          <span class="tag">Linux · Kubuntu</span>
+  </head>
+  <body>
+    <header class="hero"> <img src="terramax_banner.png" alt="Terramax banner">
+    </header>
+    <main class="sheet">
+      <section class="doc-head">
+        <div>
+          <h2 class="doc-title">Public Index</h2>
         </div>
-        <p class="script-desc">
-          Interactive helper script for bootstrapping KDE-Services dependencies and installing the service menus cleanly on Ubuntu-family KDE systems.
-        </p>
-        <div class="actions">
-          <a class="button" href="#">Download Script</a>
-          <a class="button secondary" href="#">View Source</a>
-        </div>
-      </li>
-
-      <li class="script-card">
-        <div class="script-top">
-          <h4 class="script-name">RustDesk + Dropbear Bootstrap</h4>
-          <span class="tag">Linux Mint · Remote Access</span>
-        </div>
-        <p class="script-desc">
-          Near one-and-done interactive installer for RustDesk unattended access with optional Dropbear-initramfs scaffolding for encrypted root unlock workflows.
-        </p>
-        <div class="actions">
-          <a class="button" href="#">Download Script</a>
-          <a class="button secondary" href="#">View Source</a>
-        </div>
-      </li>
-
-      <li class="script-card">
-        <div class="script-top">
-          <h4 class="script-name">Repo Tree Bootstrap</h4>
-          <span class="tag">Storage · Bootstrap</span>
-        </div>
-        <p class="script-desc">
-          Repo-node tree builder for staging roots, entity splits, media pipelines, and predictable Terramax storage layout initialization.
-        </p>
-        <div class="actions">
-          <a class="button" href="#">Download Script</a>
-          <a class="button secondary" href="#">View Source</a>
-        </div>
-      </li>
-    </ul>
-
-    <section class="notes">
-      <strong>Notes</strong><br />
-       nonr yet
-    </section>
-
-    <footer class="footer">
-      Terramax 2026
-    </footer>
-  </main>
-</body>
+        <p class="doc-meta"> Loosely maintained by Dylan Maher </p>
+      </section>
+      <p class="intro"> This page is a simple public landing page for Terramax
+        helper scripts, bootstrap wrappers, and app repositories. It is
+        intentionally lightweight: direct links, short descriptions, and no
+        extra framework overhead. Most of what is here is personal project work,
+        experiments, and things in progress, so do not expect every project to
+        be polished or finished. </p>
+      <h3 class="section-title">Scripts &amp; Bootstrap Tools</h3>
+      <ul class="item-list">
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">KDE-Services Bootstrap</h4>
+            <span class="tag">Linux · Kubuntu</span> </div>
+          <p class="item-desc"> Interactive helper script for bootstrapping
+            KDE-Services dependencies and installing the service menus cleanly
+            on Ubuntu-family KDE systems. </p>
+          <div class="actions"> <a class="button" href="#">Download Script</a>
+            <a class="button secondary" href="#">View Source</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">Unattended Support Kit</h4>
+            <span class="tag">Linux Mint · Remote Access</span> </div>
+          <p class="item-desc"> Near one-and-done interactive installer for
+            RustDesk unattended access with optional Dropbear-initramfs
+            scaffolding for encrypted root unlock workflows. </p>
+          <div class="actions"> <a class="button" href="#">Download Script</a>
+            <a class="button secondary" href="#">View Source</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">Repo Bootstrap</h4>
+            <span class="tag">Storage · Bootstrap</span> </div>
+          <p class="item-desc"> Repo-node tree builder for staging roots, entity
+            splits, media pipelines, and predictable Terramax storage layout
+            initialization. </p>
+          <div class="actions"> <a class="button" href="#">Download Script</a>
+            <a class="button secondary" href="#">View Source</a> </div>
+        </li>
+      </ul>
+      <h3 class="section-title">Apps &amp; Repositories</h3>
+      <ul class="item-list">
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">Core SOP</h4>
+            <span class="tag">Standards · HTML</span> </div>
+          <p class="item-desc"> TMX Gold CodeStyle, naming conventions, bookmark
+            standards, and general project principles. </p>
+          <div class="actions"> <a class="button" href="#">Open Repo</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">Media Miner</h4>
+            <span class="tag">Python · Media</span> </div>
+          <p class="item-desc"> AI-powered multimedia content asset posting
+            pipeline and SEO optimizer. </p>
+          <div class="actions"> <a class="button" href="#">Open Repo</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">Deep Probe</h4>
+            <span class="tag">App · Research</span> </div>
+          <p class="item-desc"> DeepProbe project repository. </p>
+          <div class="actions"> <a class="button" href="#">Open Repo</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">Dream Forge</h4>
+            <span class="tag">Jupyter · AI</span> </div>
+          <p class="item-desc"> AI environment builder and experimentation
+            workspace. </p>
+          <div class="actions"> <a class="button" href="#">Open Repo</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">Folder Zen</h4>
+            <span class="tag">PowerShell · Automation</span> </div>
+          <p class="item-desc"> FolderZen M0-M8 PowerShell automation for file
+            consolidation and classification. </p>
+          <div class="actions"> <a class="button" href="#">Open Repo</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">Recon MP</h4>
+            <span class="tag">HTML · Recon</span> </div>
+          <p class="item-desc"> ReconMP project repository. </p>
+          <div class="actions"> <a class="button" href="#">Open Repo</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">MultIso</h4>
+            <span class="tag">Shell · ISO</span> </div>
+          <p class="item-desc"> Ventoy multi-boot ISO builder. </p>
+          <div class="actions"> <a class="button" href="#">Open Repo</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">Gmail Filters</h4>
+            <span class="tag">HTML · Mail</span> </div>
+          <p class="item-desc"> Gmail filter tooling and supporting files for
+            email automation and organization. </p>
+          <div class="actions"> <a class="button" href="#">Open Repo</a> </div>
+        </li>
+        <li class="item-card">
+          <div class="item-top">
+            <h4 class="item-name">TerraPulse</h4>
+            <span class="tag">Shell · Telemetry</span> </div>
+          <p class="item-desc"> TerraPulse — Smartcar and Firebase EV vehicle
+            telemetry backend. </p>
+          <div class="actions"> <a class="button" href="#">Open Repo</a> </div>
+        </li>
+      </ul>
+      <section class="notes"> <strong>Notes</strong><br>
+      </section>
+    </main>
+  </body>
 </html>
