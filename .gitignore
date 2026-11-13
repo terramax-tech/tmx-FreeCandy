@@ -1,0 +1,28 @@
+# ── TMX baseline (sop-Core templates/gitignore-baseline.txt, v0.1) ──
+# Secrets and environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*credentials*.json
+# Password manager and browser exports (never commit, never keep)
+*.1pux
+*.1pif
+*1PasswordExport*
+*1Password*Emergency*Kit*
+*roboform*
+*RoboForm*
+*passwords*.csv
+*Passwords*.csv
+# Mailbox and raw exports
+*.mbox
+*.eml
+*.pst
+*.ost
+takeout-*.zip
+# ── end TMX baseline ──
