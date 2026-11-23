@@ -1,0 +1,17 @@
+# ───────────────────────────────────────────────────────────────
+#  Project:      sop-Core template (copied into every repository)
+#  Module:       Dependabot configuration
+#  Purpose:      Keep GitHub Actions used by workflows up to date
+#  Revision:     v0.1
+# ───────────────────────────────────────────────────────────────
+version: 2
+updates:
+  # GitHub Actions in .github/workflows: one batched PR a month.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
